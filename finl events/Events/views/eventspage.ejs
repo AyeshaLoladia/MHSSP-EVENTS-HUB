@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>
+        <%= events.title %>
+    </title>
+    <link rel="icon" type="image/x-icon" href="/img/mhssp.png">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#registration">Registration</a></li>
+                    <li><a class="nav-link scrollto " href="#committee">Committee</a></li>
+                    <li><a class="nav-link scrollto " href="#dates">Important Dates</a></li>
+                    <li><a class="nav-link scrollto " href="#downloads">Downloads</a></li>
+                    <li><a class="nav-link scrollto" href="#pec">PEC</a></li>
+                    <li><a class="nav-link scrollto" href="#sc">Selection Criteria</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Resource Person</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <h2>
+                <center>
+                    <%= events.title %>
+                </center>
+            </h2>
+            <img width="100%" src="/<%= events.img %>">
+
+        </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Featured Services Section ======= -->
+        <section id="featured-services" class="featured-services">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4 class="title"><a href="">Magni Dolores</a></h4>
+                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon"><i class="bx bx-world"></i></div>
+                            <h4 class="title"><a href="">Nemo Enim</a></h4>
+                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Featured Services Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>About</h2>
+                    <p style="width: 100%; text-align: justify;">
+                        <%= events.about %>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h5>Objectives of the Programme</h5>
+                        <% 
+                            var objArr = events.obj.split(".,");
+                            objArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h5>Expected Outcome</h5>
+                        <% 
+                            var outArr = events.outcome.split(".,");
+                            outArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="registration" class="services">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Registration</h2>
+                    <h3>Registration are <span>OPEN</span></h3>
+                    <p>This being AICTE sponsored FDP there are NO registration charges. However online registration is compulsory.</p>
+                    <a href="<%= events.regLink %>">Click here to open Registration Form</a>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h6>Important Note:</h6>
+                        <% 
+                            var descArr = events.regDesc.split(".,");
+                            descArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div><br>
+
+                <h5>Contact for Registrations:</h5>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <h5>
+                                <%= events.regName1 %>
+                            </h5>
+                            <p>Designation:
+                                <%= events.regDesg1 %><br> Mobile:
+                                    <%= events.regMob1 %><br> Email:
+                                        <%= events.regEmail1 %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <h5>
+                                <%= events.regName2 %>
+                            </h5>
+                            <p>Designation:
+                                <%= events.regDesg2 %><br> Mobile:
+                                    <%= events.regMob2 %><br> Email:
+                                        <%= events.regEmail2 %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <h5>
+                                <%= events.regName3 %>
+                            </h5>
+                            <p>Designation:
+                                <%= events.regDesg3 %><br> Mobile:
+                                    <%= events.regMob3 %><br> Email:
+                                        <%= events.regEmail3 %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- End Services Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="committee" class="portfolio">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Committee</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h5>Patrons</h5>
+                        <% 
+                            var patArr = events.patrons.split(".,");
+                            patArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h5>Committee</h5>
+                        <% 
+                            var comArr = events.committee.split(".,");
+                            comArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Portfolio Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="dates" class="about section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Important Dates</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= events.importantTitle1 %>
+                                    </td>
+                                    <td>
+                                        <%= events.importantDate1 %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= events.importantTitle2 %>
+                                    </td>
+                                    <td>
+                                        <%= events.importantDate2 %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <%= events.importantTitle3 %>
+                                    </td>
+                                    <td>
+                                        <%= events.importantDate3 %>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><br>
+            </div>
+        </section>
+        <!-- End About Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="downloads" class="services">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Downloads</h2>
+                </div>
+
+                <div style="text-align-last: center;">
+                    <button type="button" class="btn btn-primary" href="/<%= events.downloadLink1 %>"><%= events.downloadTitle1 %></button>
+                    <button type="button" class="btn btn-primary" href="/<%= events.downloadLink2 %>"><%= events.downloadTitle2 %></button>
+                    <button type="button" class="btn btn-primary" href="/<%= events.downloadLink3 %>"><%= events.downloadTitle3 %></button>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="pec" class="about section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Program Evaluation Committee (PEC)</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <% 
+                            var pecArr = events.pec.split(".,");
+                            pecArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <h6>Note:</h6>
+                        <% 
+                            var outArr = events.rulesPEC.split(".,");
+                            outArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="sc" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Selection Criteria</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                        <% 
+                            var pecArr = events.selection.split(".,");
+                            pecArr.forEach(function(data){
+                        %>
+                            <li>
+                                <%= data %>
+                            </li>
+                            <% }) %>
+                    </div>
+                </div><br>
+
+            </div>
+        </section>
+        <!-- End About Section -->
+
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Resource Person</h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="/<%= events.resImg1 %>" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>
+                                    <%= events.resName1 %>
+                                </h4>
+                                <span><%= events.resDesg1 %></span>
+                                <span>Topic: <%= events.resTopic1 %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="/<%= events.resImg2 %>" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>
+                                    <%= events.resName2 %>
+                                </h4>
+                                <span><%= events.resDesg2 %></span>
+                                <span>Topic: <%= events.resTopic2 %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="/<%= events.resImg3 %>" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>
+                                    <%= events.resName3 %>
+                                </h4>
+                                <span><%= events.resDesg3 %></span>
+                                <span>Topic: <%= events.resTopic3 %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="/<%= events.resImg5 %>" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>
+                                    <%= events.resName5 %>
+                                </h4>
+                                <span><%= events.resDesg5 %></span>
+                                <span>Topic: <%= events.resTopic5 %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="/<%= events.resImg4 %>" class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>
+                                    <%= events.resName4 %>
+                                </h4>
+                                <span><%= events.resDesg4 %></span>
+                                <span>Topic: <%= events.resTopic4 %></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Team Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+
+                </div>
+
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-12">
+                        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d120741.39810135133!2d72.831321!3d18.968156!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5d71ff22760f8e77!2sM.H.%20Saboo%20Siddik%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1647169134418!5m2!1sen!2sin"
+                            frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>2020 M H SABOO SIDDIK POLYTECHNIC </span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

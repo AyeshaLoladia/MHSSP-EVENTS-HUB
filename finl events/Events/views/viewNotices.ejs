@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MHSSP Events | Notices</title>
+    <link rel="icon" type="image/x-icon" href="/img/mhssp.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+        
+        .events {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <img src="/img/header.png" />
+    </div><br>
+    <nav class="navbar navbar-inverse" style="margin-left: auto; margin-right: auto; width: 90%;">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notices <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/view-notices/Computer Engineering">Computer Engineering</a></li>
+                        <li><a href="/view-notices/Information Technology">Information Technology</a></li>
+                        <li><a href="/view-notices/Electrical Engineering">Electrical Engineering</a></li>
+                        <li><a href="/view-notices/Civil Engineering">Civil Engineering</a></li>
+                        <li><a href="/view-notices/Mechanical Engineering (Aided)">Mechanical Engineering (Aided)</a></li>
+                        <li><a href="/view-notices/Mechanical Engineering (Unaided)">Mechanical Engineering (Unaided)</a></li>
+                        <li><a href="/view-notices/Electronics & Telecommunication">Electronics & Telecommunication</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">First Year Diploma Admission</a></li>
+                <li><a href="#">Direct Second Year Diploma Admission</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="events">
+        <center>
+            <h2>Notices:
+                <%= dept %>
+            </h2>
+        </center>
+        <ul class="list-group">
+            <%
+                    if(notices.length!=0){
+                        var i=1;
+                        notices.forEach(function(data){
+                %>
+                <li class="list-group-item">
+                    <%= data.title %>
+                </li>
+                <%  i++; }) %>
+                    <% } else {%>
+                        <li class="list-group-item">
+                            Nothing to Show
+                        </li>
+                        <% } %>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
+
+    <title>Add Event | Admin</title>
+    <link rel="icon" type="image/x-icon" href="/img/mhssp.png">
+
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar" class="sidebar js-sidebar">
+            <div class="sidebar-content js-simplebar">
+                <a class="sidebar-brand" href="/admin/dashboard">
+                    <span class="align-middle">MHSSP Events</span>
+                </a>
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Pages
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/dashboard">
+                            <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/events">
+                            <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Events</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item active">
+                        <a class="sidebar-link" href="/admin/notices">
+                            <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Notices</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/logout">
+                            <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main">
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <a class="sidebar-toggle js-sidebar-toggle">
+                    <i class="hamburger align-self-center"></i>
+                </a>
+            </nav>
+
+            <main class="content">
+                <div class="container-fluid p-0">
+
+                    <div class="mb-3">
+                        <h1 class="h3 d-inline align-middle">Add Event</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form action="/admin/add-event" enctype="multipart/form-data" method="post" class="needs-validation" accept-charset="utf-8">
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-6">
+                                                <label for="catdesc" class="form-label">Event Title</label>
+                                                <input type="text" class="form-control" name="title" placeholder="Enter Event Title" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter title</div>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="img" class="form-label">Event Banner</label><br>
+                                                <input class="input--style-5" type="file" name="img" accept=".png, .jpg, .jpeg" required>
+                                            </div>
+                                        </div>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-12">
+                                                <label for="about" class="form-label">Event About</label>
+                                                <input type="text" class="form-control" name="about" placeholder="Enter Event About" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter about</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label for="objectives" class="form-label">Event Objectives</label>
+                                            <input id="objectives" name="objectives" type="text" class="form-control" placeholder="Enter Objectives" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                            <br/>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-info" id="objBtn" type="button">Add</button>
+                                            </div>
+                                            <br/>
+                                            <div class="col-12">
+                                                <ul id="list-obj" class="list-group">
+                                                </ul>
+                                            </div>
+                                        </div><br>
+                                        <div class="col-sm-12">
+                                            <label for="out" class="form-label">Event Outcomes</label>
+                                            <input id="out" name="out" type="text" class="form-control" placeholder="Enter Outcomes" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                            <br/>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-info" id="outBtn" type="button">Add</button>
+                                            </div>
+                                            <br/>
+                                            <div class="col-12">
+                                                <ul id="list-out" class="list-group">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <hr>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-12">
+                                                <label for="regDesc" class="form-label">Registration Description</label>
+                                                <input type="text" class="form-control" name="regDesc" placeholder="Enter Registration Description" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter Registration Description</div>
+                                            </div>
+                                        </div>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-12">
+                                                <label for="regLink" class="form-label">Registration Link</label>
+                                                <input type="text" class="form-control" name="regLink" placeholder="Enter Registration Link" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter Registration Link</div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-6">
+                                                <label for="catdesc" class="form-label">Registration Contact Name</label>
+                                                <input type="text" class="form-control" name="regName1" placeholder="Enter Name" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter date</div>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="catname" class="form-label">Registration Contact Designation</label>
+                                                <input type="name" class="form-control" name="regDesg1" placeholder="Enter Designation" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter Notice Title.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row g-2">
+                                            <div class="mb-3 col-md-6">
+                                                <label for="catdesc" class="form-label">Registration Contact Mobile</label>
+                                                <input type="text" class="form-control" name="regMob1" placeholder="Enter Mobile" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter date</div>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="catname" class="form-label">Registration Contact Email</label>
+                                                <input type="email" class="form-control" name="regEmail1" placeholder="Enter Email" required>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter Notice Title.</div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="row g-2">
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catdesc" class="form-label">Registration Contact Name</label>
+                                                    <input type="text" class="form-control" name="regName2" placeholder="Enter Name" required>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="invalid-feedback">Please enter date</div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catname" class="form-label">Registration Contact Designation</label>
+                                                    <input type="name" class="form-control" name="regDesg2" placeholder="Enter Designation" required>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row g-2">
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catdesc" class="form-label">Registration Contact Mobile</label>
+                                                    <input type="text" class="form-control" name="regMob2" placeholder="Enter Mobile" required>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="invalid-feedback">Please enter date</div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catname" class="form-label">Registration Contact Email</label>
+                                                    <input type="email" class="form-control" name="regEmail2" placeholder="Enter Email" required>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="row g-2">
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catdesc" class="form-label">Registration Contact Name</label>
+                                                        <input type="text" class="form-control" name="regName3" placeholder="Enter Name" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter date</div>
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catname" class="form-label">Registration Contact Designation</label>
+                                                        <input type="name" class="form-control" name="regDesg3" placeholder="Enter Designation" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2">
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catdesc" class="form-label">Registration Contact Mobile</label>
+                                                        <input type="text" class="form-control" name="regMob3" placeholder="Enter Mobile" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter date</div>
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catname" class="form-label">Registration Contact Email</label>
+                                                        <input type="email" class="form-control" name="regEmail3" placeholder="Enter Email" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                    </div>
+                                                    <hr>
+                                                    <br>
+                                                    <div class="col-sm-12">
+                                                        <label for="pat" class="form-label">Event Patrons</label>
+                                                        <input id="pat" name="pat" type="text" class="form-control" placeholder="Enter Patrons" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                                        <br/>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-info" id="patBtn" type="button">Add</button>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="col-12">
+                                                            <ul id="list-pat" class="list-group">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <hr>
+
+                                                <div class="row g-2">
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catdesc" class="form-label">Course Coordinator Name</label>
+                                                        <input type="text" class="form-control" name="courseName" placeholder="Enter Coordinator Name" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter date</div>
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catname" class="form-label">Course Coordinator Designation</label>
+                                                        <input type="name" class="form-control" name="courseDesg" placeholder="Enter Coordinator Designation" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2">
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catdesc" class="form-label">Course Coordinator Mobile</label>
+                                                        <input type="text" class="form-control" name="courseMob" placeholder="Enter Coordinator Mobile" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter date</div>
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label for="catname" class="form-label">Course Coordinator Email</label>
+                                                        <input type="name" class="form-control" name="courseEmail" placeholder="Enter Coordinator Email" required>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="col-sm-10">
+                                                        <label for="orgCom" class="form-label">Organizing Committee</label>
+                                                        <input id="orgCom" name="orgCom" type="text" class="form-control" placeholder="Enter Organizing Committee" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                                        <br/>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-info" id="orgBtn" type="button">Add</button>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="col-12">
+                                                            <ul id="list-org" class="list-group">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <hr>
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="importantTitle1" class="form-label">Important Date Title 1</label>
+                                                            <input type="text" class="form-control" name="importantTitle1" placeholder="Enter Important Date Title 1" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Important Date Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="importantDate1" class="form-label">Important Date 1</label>
+                                                            <input type="date" class="form-control" name="importantDate1" placeholder="Enter Important Date 1" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please enter Important Date 1.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="importantTitle2" class="form-label">Important Date Title 2</label>
+                                                            <input type="text" class="form-control" name="importantTitle2" placeholder="Enter Important Date Title 2" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Important Date Title 2</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="importantDate2" class="form-label">Important Date 2</label>
+                                                            <input type="date" class="form-control" name="importantDate2" placeholder="Enter Important Date 2" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please enter Important Date 2.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="importantTitle1" class="form-label">Important Date Title 3</label>
+                                                            <input type="text" class="form-control" name="importantTitle3" placeholder="Enter Important Date Title 3" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Important Date Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="importantDate1" class="form-label">Important Date 3</label>
+                                                            <input type="date" class="form-control" name="importantDate3" placeholder="Enter Important Date 3" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please enter Important Date 3.</div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <hr>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="downloadTitle1" class="form-label">Downloads Title 1</label>
+                                                            <input type="text" class="form-control" name="downloadTitle1" placeholder="Enter Downloads Title 1" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="downloadLink1" class="form-label">Downloads File 1</label><br>
+                                                            <input class="input--style-5" type="file" name="downloadLink1" accept=".png, .pdf" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="downloadTitle1" class="form-label">Downloads Title 2</label>
+                                                            <input type="text" class="form-control" name="downloadTitle2" placeholder="Enter Downloads Title 2" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 2</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="downloadLink1" class="form-label">Downloads File 2</label><br>
+                                                            <input class="input--style-5" type="file" name="downloadLink2" accept=".png, .pdf" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="downloadTitle3" class="form-label">Downloads Title 3</label>
+                                                            <input type="text" class="form-control" name="downloadTitle3" placeholder="Enter Downloads Title 3" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 3</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label for="downloadLink1" class="form-label">Downloads File 3</label><br>
+                                                            <input class="input--style-5" type="file" name="downloadLink3" accept=".png, .pdf" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+                                                    <br>
+                                                    <div class="col-sm-12">
+                                                        <label for="pecCom" class="form-label">Program Evaluation Committee</label>
+                                                        <input id="pecCom" name="pecCom" type="text" class="form-control" placeholder="Enter Program Evaluation Committee" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                                        <br/>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-info" id="pecBtn" type="button">Add</button>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="col-12">
+                                                            <ul id="list-pec" class="list-group">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+
+                                                    <br>
+                                                    <hr>
+                                                    <div class="col-sm-12">
+                                                        <label for="rPEC" class="form-label">PEC Rules</label>
+                                                        <input id="rPEC" name="rPEC" type="text" class="form-control" placeholder="Enter PEC Rules" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                                        <br/>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-info" id="rulesBtn" type="button">Add</button>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="col-12">
+                                                            <ul id="list-rPEC" class="list-group">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+
+                                                    <br>
+                                                    <br>
+                                                    <hr>
+                                                    <div class="col-sm-12">
+                                                        <label for="select" class="form-label">Selection Criteria</label>
+                                                        <input id="select" name="select" type="text" class="form-control" placeholder="Enter Selection Criteria" aria-label="Add an item" aria-describedby="basic-addon2" required>
+                                                        <br/>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-info" id="selectBtn" type="button">Add</button>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="col-12">
+                                                            <ul id="list-select" class="list-group">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <hr>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resName1" class="form-label">Resource Person Name 1</label>
+                                                            <input type="text" class="form-control" name="resName1" placeholder="Enter Person Name 1" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resDesg1" class="form-label">Resource Person Designation 1</label>
+                                                            <input type="text" class="form-control" name="resDesg1" placeholder="Enter Person Designation 1" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resTopic1" class="form-label">Resource Person Topic 1</label>
+                                                            <input type="text" class="form-control" name="resTopic1" placeholder="Enter Person Topic 1" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resImg1" class="form-label">Resource Person Image 1</label><br>
+                                                            <input class="input--style-5" type="file" name="resImg1" accept=".png, .jpg, .jpeg" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resName2" class="form-label">Resource Person Name 2</label>
+                                                            <input type="text" class="form-control" name="resName2" placeholder="Enter Person Name 2" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 2</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resDesg2" class="form-label">Resource Person Designation 2</label>
+                                                            <input type="text" class="form-control" name="resDesg2" placeholder="Enter Person Designation 2" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 2</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resTopic2" class="form-label">Resource Person Topic 2</label>
+                                                            <input type="text" class="form-control" name="resTopic2" placeholder="Enter Person Topic 2" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 2</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resImg2" class="form-label">Resource Person Image 2</label><br>
+                                                            <input class="input--style-5" type="file" name="resImg2" accept=".png, .jpg, .jpeg" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resName3" class="form-label">Resource Person Name 3</label>
+                                                            <input type="text" class="form-control" name="resName3" placeholder="Enter Person Name 3" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 3</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resDesg3" class="form-label">Resource Person Designation 3</label>
+                                                            <input type="text" class="form-control" name="resDesg3" placeholder="Enter Person Designation 3" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 3</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resTopic3" class="form-label">Resource Person Topic 3</label>
+                                                            <input type="text" class="form-control" name="resTopic3" placeholder="Enter Person Topic 3" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 3</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resImg3" class="form-label">Resource Person Image 3</label><br>
+                                                            <input class="input--style-5" type="file" name="resImg3" accept=".png, .jpg, .jpeg" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resName4" class="form-label">Resource Person Name 4</label>
+                                                            <input type="text" class="form-control" name="resName4" placeholder="Enter Person Name 4" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 4</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resDesg4" class="form-label">Resource Person Designation 4</label>
+                                                            <input type="text" class="form-control" name="resDesg4" placeholder="Enter Person Designation 4" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 4</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resTopic4" class="form-label">Resource Person Topic 4</label>
+                                                            <input type="text" class="form-control" name="resTopic4" placeholder="Enter Person Topic 4" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 4</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resImg4" class="form-label">Resource Person Image 4</label><br>
+                                                            <input class="input--style-5" type="file" name="resImg4" accept=".png, .jpg, .jpeg" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row g-2">
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resName5" class="form-label">Resource Person Name 5</label>
+                                                            <input type="text" class="form-control" name="resName5" placeholder="Enter Person Name 5" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 5</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resDesg5" class="form-label">Resource Person Designation 5</label>
+                                                            <input type="text" class="form-control" name="resDesg5" placeholder="Enter Person Designation 5" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resTopic5" class="form-label">Resource Person Topic 5</label>
+                                                            <input type="text" class="form-control" name="resTopic5" placeholder="Enter Person Topic 5" required>
+                                                            <div class="valid-feedback">Looks good!</div>
+                                                            <div class="invalid-feedback">Please Downloads Title 1</div>
+                                                        </div>
+                                                        <div class="mb-3 col-md-3">
+                                                            <label for="resImg5" class="form-label">Resource Person Image 5</label><br>
+                                                            <input class="input--style-5" type="file" name="resImg5" accept=".png, .jpg, .jpeg" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <input type="hidden" id="obj" name="obj" />
+                                                    <input type="hidden" id="outcome" name="outcome" />
+                                                    <input type="hidden" id="patrons" name="patrons" />
+                                                    <input type="hidden" id="committee" name="committee" />
+                                                    <input type="hidden" id="pec" name="pec" />
+                                                    <input type="hidden" id="rulesPEC" name="rulesPEC" />
+                                                    <input type="hidden" id="selection" name="selection" />
+                                                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Add Event</button>
+                                    </form>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+                            </div>
+            </main>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <strong>MHSSP Events</strong></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            </div>
+            </div>
+
+            <script src="/js/app.js"></script>
+            <script>
+                var objBtn = document.getElementById("objBtn");
+                var input = document.getElementById("objectives");
+                var obj = document.getElementById("obj");
+                var ul = document.getElementById("list-obj");
+                var advArr = [];
+                objBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = input.value;
+                    if (input.value == "") {
+                        alert("Enter Objectives!");
+                    } else {
+                        ul.appendChild(li);
+                        advArr.push(input.value);
+                        obj.value = advArr
+                        input.value = " ";
+                    }
+                })
+
+                var outBtn = document.getElementById("outBtn");
+                var outInput = document.getElementById("out");
+                var outcome = document.getElementById("outcome");
+                var listOut = document.getElementById("list-out");
+                var outArr = [];
+                outBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = outInput.value;
+                    if (outInput.value == "") {
+                        alert("Enter Outcomes!");
+                    } else {
+                        listOut.appendChild(li);
+                        outArr.push(outInput.value);
+                        outcome.value = outArr
+                        outInput.value = " ";
+                    }
+                })
+
+
+                var patBtn = document.getElementById("patBtn");
+                var patInput = document.getElementById("pat");
+                var patrons = document.getElementById("patrons");
+                var listPat = document.getElementById("list-pat");
+                var patArr = [];
+                patBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = patInput.value;
+                    if (patInput.value == "") {
+                        alert("Enter Patrons!");
+                    } else {
+                        listPat.appendChild(li);
+                        patArr.push(patInput.value);
+                        patrons.value = patArr
+                        patInput.value = " ";
+                    }
+                })
+
+                var orgBtn = document.getElementById("orgBtn");
+                var orgInput = document.getElementById("orgCom");
+                var committee = document.getElementById("committee");
+                var listOrg = document.getElementById("list-org");
+                var orgArr = [];
+                orgBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = orgInput.value;
+                    if (orgInput.value == "") {
+                        alert("Enter Organizing Committee!");
+                    } else {
+                        listOrg.appendChild(li);
+                        orgArr.push(orgInput.value);
+                        committee.value = orgArr
+                        orgInput.value = " ";
+                    }
+                })
+
+                var pecBtn = document.getElementById("pecBtn");
+                var pecInput = document.getElementById("pecCom");
+                var pec = document.getElementById("pec");
+                var listPEC = document.getElementById("list-pec");
+                var pecArr = [];
+                pecBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = pecInput.value;
+                    if (pecInput.value == "") {
+                        alert("Enter Program Evaluation Committee!");
+                    } else {
+                        listPEC.appendChild(li);
+                        pecArr.push(pecInput.value);
+                        pec.value = pecArr
+                        pecInput.value = " ";
+                    }
+                })
+
+                var rulesBtn = document.getElementById("rulesBtn");
+                var rPEC = document.getElementById("rPEC");
+                var rulesPEC = document.getElementById("rulesPEC");
+                var listrPEC = document.getElementById("list-rPEC");
+                var ruleArr = [];
+                rulesBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = rPEC.value;
+                    if (rPEC.value == "") {
+                        alert("Enter Program Evaluation Committee Rules!");
+                    } else {
+                        listrPEC.appendChild(li);
+                        ruleArr.push(rPEC.value);
+                        rulesPEC.value = ruleArr
+                        rPEC.value = " ";
+                    }
+                })
+
+                var selectBtn = document.getElementById("selectBtn");
+                var select = document.getElementById("select");
+                var selection = document.getElementById("selection");
+                var listselect = document.getElementById("list-select");
+                var selectArr = [];
+                selectBtn.addEventListener("click", function() {
+                    var li = document.createElement("li");
+                    li.className = 'list-group-item';
+                    li.textContent = select.value;
+                    if (select.value == "") {
+                        alert("Enter Program Evaluation Committee Rules!");
+                    } else {
+                        listselect.appendChild(li);
+                        selectArr.push(select.value);
+                        selection.value = selectArr
+                        select.value = " ";
+                    }
+                })
+            </script>
+</body>
+
+</html>
